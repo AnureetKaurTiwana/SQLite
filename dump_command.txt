@@ -1,0 +1,25 @@
+--Summary: in this tutorial, you will learn how to use the SQLite dump command to backup and restore a database.
+--command prompt(cmd) commands to dump table data into text file
+--open database  
+sqlite3 chinook.db
+--output command will write the output of the following commands into the cmd file
+sqlite>.output cmd.sql
+--the following command dump the database into the above file
+sqlite>.dump
+sqlite>.exit
+
+--dump into the specific table using sqlite dump command
+
+sqlite>.output cmd.sql
+sqlite>.dump albumbs
+sqlite>.quit
+
+--only dump the structure of the table
+sqlite>.output cmd.sql
+sqlite>.schema
+sqlite>.quit
+
+--othe way using insert mode
+sqlite>.mode insert
+sqlite>.output cmd.sql
+sqlite>select * from artists;

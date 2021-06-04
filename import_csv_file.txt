@@ -1,0 +1,17 @@
+sqlite> .mode csv
+--the following command will create cities table and take the top row as header
+sqlite> .import city.csv cities
+--following command show the structure of the cities table
+sqlite> .schema cities 
+sqlite> select * from cities limit 10;
+--lets delete the table and create it self
+sqlite> drop table if exists cities;
+--writing not null will make these both primary keys and if no primary key is there then by default rowid is added to the --table as primary key
+sqlite> create table cities(
+	name text not null,
+	population integer not null
+	);
+sqlite>.mode csv
+sqlite>.import city.csv cities
+
+The above process can be easily done in sqlite studio
